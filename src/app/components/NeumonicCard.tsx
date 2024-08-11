@@ -114,7 +114,7 @@ const NeumonicCard = () => {
       <div className='md:grid grid-cols-2 mb-10 flex-col md:gap-5 gap-2  mt-10 md:w-screen md:pl-24 md:pr-24'>
         {wallets.map((wallet, index) => (
           <li
-            className='list-none  md:text-lg text-xs  md:p-5 p-1 bg-blue-100 md:flex rounded-lg text-black'
+            className='list-none  md:text-lg text-xs  md:p-5 p-1 bg-blue-100 md:flex rounded-lg text-black mt-5'
             key={index}>
             <span className=' flex justify-center items-center align-middle gap-1 text-black'>
               Wallet address
