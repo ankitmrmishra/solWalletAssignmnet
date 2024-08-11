@@ -51,8 +51,11 @@ const NeumonicCard = () => {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
+      console.log(response);
 
       const data = await response.json();
+      console.log(data);
+
       setWallets([...wallets, data.publicKey]);
     } catch (error) {
       console.error("Error adding wallet:", error);
@@ -96,7 +99,7 @@ const NeumonicCard = () => {
         )}
       </div>
 
-      <div className='buttons   flex gap-1 justify-center md:w-[34.5rem] w-[33rem]'>
+      <div className='buttons   flex gap-1 justify-center md:w-[34.5rem] '>
         {mnemonicWordsGen && (
           <div className='w-full mt-3  flex justify-center md:justify-end'>
             <button
@@ -108,15 +111,16 @@ const NeumonicCard = () => {
         )}
       </div>
 
-      <div className='grid grid-cols-2 mb-10 flex-col gap-5 mt-10 w-screen pl-24 pr-24'>
+      <div className='md:grid grid-cols-2 mb-10 flex-col md:gap-5 gap-2  mt-10 md:w-screen md:pl-24 md:pr-24'>
         {wallets.map((wallet, index) => (
           <li
-            className='list-none gap-2 text-lg  p-5 bg-blue-100 flex rounded-lg'
+            className='list-none  md:text-lg text-xs  md:p-5 p-1 bg-blue-100 md:flex rounded-lg text-black'
             key={index}>
-            <span className='text-lg flex justify-center items-center align-middle gap-2'>
-              Wallet
+            <span className=' flex justify-center items-center align-middle gap-1 text-black'>
+              Wallet address
               <FaWallet />:
             </span>
+
             {wallet}
           </li>
         ))}
