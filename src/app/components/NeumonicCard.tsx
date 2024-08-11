@@ -61,7 +61,7 @@ const NeumonicCard = () => {
   };
 
   return (
-    <div className='flex justify-center items-center flex-col mt-16 max-w-[35rem] '>
+    <div className='flex justify-center items-center flex-col mt-16 md:w-[35rem]  w-[24rem] align-middle '>
       <button
         onClick={generateRandom}
         className='mb-8 px-4 py-2 bg-blue-600 text-white rounded shadow-md hover:bg-blue-700 transition'>
@@ -72,8 +72,8 @@ const NeumonicCard = () => {
           navigator.clipboard.writeText(stringifiedMnenumonic);
           setCopied(true);
         }}
-        className=' bg-gray-100 pl-4 pr-4 pt-4 pb-10 gap-1'>
-        <div className='grid grid-cols-3 bg-gray-100 pl-4 pr-4 pt-4  gap-1 '>
+        className=' bg-gray-100 rounded-xl  pl-4 pr-4 pt-4 pb-10 gap-1'>
+        <div className='grid md:grid-cols-3 grid-cols-2 bg-gray-100 pl-4 pr-4 pt-4  gap-1 '>
           {mnemonicWords.map((word, idx) => (
             <div
               key={idx}
@@ -96,9 +96,9 @@ const NeumonicCard = () => {
         )}
       </div>
 
-      <div className='buttons   flex gap-1 justify-center w-[34.5rem]'>
+      <div className='buttons   flex gap-1 justify-center md:w-[34.5rem] w-[33rem]'>
         {mnemonicWordsGen && (
-          <div className='w-full mt-3  flex justify-end'>
+          <div className='w-full mt-3  flex justify-center md:justify-end'>
             <button
               onClick={addWallet}
               className=' flex  px-4 py-2 bg-blue-600 text-white rounded shadow-md hover:bg-blue-700 transition'>
